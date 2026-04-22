@@ -1,0 +1,17 @@
+{
+  "name": "frappe-agent",
+  "version": "0.1.0",
+  "description": "Frappe and ERPNext coding, customization, bench, and review intelligence for Claude Code.",
+  "author": {
+    "name": "Dhairya Marwaha",
+    "email": "dhairya15marwaha@gmail.com",
+    "url": "https://github.com/Dkm0315"
+  },
+  "homepage": "https://github.com/Dkm0315/frappe-agent",
+  "repository": "https://github.com/Dkm0315/frappe-agent",
+  "license": "MIT",
+  "skills": "./skills/",
+  "commands": [
+    "./commands/"
+  ]
+}

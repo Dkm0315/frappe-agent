@@ -27,9 +27,9 @@
 This repository currently ships:
 
 - a real Codex plugin
-- portable agent-instruction files for Claude Code, Cursor, and GitHub Copilot
-
-It does not yet ship a full native Claude Code plugin package or a native Cursor/Copilot plugin package.
+- a native Claude Code plugin package and marketplace file
+- portable and reusable Cursor rules plus command files
+- GitHub Copilot repository instructions
 
 ### Codex
 
@@ -52,31 +52,55 @@ so it can act as a self-contained Codex plugin repository.
 
 ### Claude Code
 
-Claude Code supports plugins, but this repository currently provides portable repo instructions rather than a native Claude plugin manifest.
+Claude Code supports plugins and plugin marketplaces.
 
-Today, the practical setup is to copy or symlink the included `CLAUDE.md` into the target repository root:
+This repository now includes:
 
-```bash
-ln -s /path/to/frappe-agent/CLAUDE.md /path/to/your-frappe-project/CLAUDE.md
+- `.claude-plugin/plugin.json`
+- `.claude-plugin/marketplace.json`
+- `commands/`
+- `skills/`
+
+Install from GitHub with:
+
+```text
+/plugin marketplace add Dkm0315/frappe-agent
+/plugin install frappe-agent@frappe-agent
 ```
 
-or:
+For local development:
 
 ```bash
-cp /path/to/frappe-agent/CLAUDE.md /path/to/your-frappe-project/CLAUDE.md
+claude --plugin-dir /path/to/frappe-agent
+```
+
+After updates during a session, reload plugins with:
+
+```text
+/reload-plugins
 ```
 
 ### Cursor
 
-Cursor uses repository instructions such as `AGENTS.md`, `.cursor/rules`, and project commands.
+Cursor uses repository instructions such as `AGENTS.md`, `.cursor/rules`, and `.cursor/commands`.
 
-You can reuse the included files in a target repository:
+This repository now includes:
+
+- `AGENTS.md`
+- `.cursor/rules/frappe-agent.mdc`
+- `.cursor/commands/*.md`
+
+To reuse them in a target repository:
 
 ```bash
 cp /path/to/frappe-agent/AGENTS.md /path/to/your-frappe-project/AGENTS.md
 mkdir -p /path/to/your-frappe-project/.cursor/rules
 cp /path/to/frappe-agent/.cursor/rules/frappe-agent.mdc /path/to/your-frappe-project/.cursor/rules/frappe-agent.mdc
+mkdir -p /path/to/your-frappe-project/.cursor/commands
+cp /path/to/frappe-agent/.cursor/commands/*.md /path/to/your-frappe-project/.cursor/commands/
 ```
+
+Cursor does not currently have the same repo-marketplace plugin install flow here that Claude Code does, so the practical installation path is still repo-level rules and commands.
 
 ### GitHub Copilot
 
@@ -119,14 +143,35 @@ frappe-agent/
 │   └── plugins/
 │       └── marketplace.json
 ├── .cursor/
+│   ├── commands/
+│   │   ├── frappe-backend.md
+│   │   ├── frappe-bench.md
+│   │   ├── frappe-customization.md
+│   │   ├── frappe-erpnext.md
+│   │   ├── frappe-frontend.md
+│   │   ├── frappe-fullstack.md
+│   │   ├── frappe-search.md
+│   │   └── frappe-sql.md
 │   └── rules/
 │       └── frappe-agent.mdc
+├── .claude-plugin/
+│   ├── marketplace.json
+│   └── plugin.json
 ├── .codex-plugin/
 │   └── plugin.json
 ├── .github/
 │   └── copilot-instructions.md
 ├── AGENTS.md
 ├── CLAUDE.md
+├── commands/
+│   ├── frappe-backend.md
+│   ├── frappe-bench.md
+│   ├── frappe-customization.md
+│   ├── frappe-erpnext.md
+│   ├── frappe-frontend.md
+│   ├── frappe-fullstack.md
+│   ├── frappe-search.md
+│   └── frappe-sql.md
 ├── skills/
 │   ├── frappe-backend/
 │   ├── frappe-bench/
@@ -141,11 +186,16 @@ frappe-agent/
 
 ## Current Scope
 
-This repository is the Codex-native plugin package plus a portable instruction bundle for Claude Code, Cursor, and Copilot.
+This repository is now:
+
+- a Codex-native plugin package
+- a Claude Code-native plugin package
+- a Cursor-ready repository rules and commands bundle
+- a Copilot-ready repository instructions bundle
 
 Planned future work:
 
-- native Claude Code plugin packaging
+- official Claude marketplace submission
 - richer Cursor command bundles
 - deeper Copilot instruction coverage
 

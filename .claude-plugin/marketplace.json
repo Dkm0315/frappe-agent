@@ -1,0 +1,19 @@
+{
+  "name": "frappe-agent",
+  "owner": {
+    "name": "Dhairya Marwaha",
+    "email": "dhairya15marwaha@gmail.com"
+  },
+  "metadata": {
+    "description": "Frappe and ERPNext development tools for Claude Code.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "frappe-agent",
+      "source": "./",
+      "description": "Frappe and ERPNext coding, customization, bench, and review intelligence.",
+      "version": "0.1.0"
+    }
+  ]
+}
