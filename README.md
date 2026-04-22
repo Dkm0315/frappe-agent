@@ -35,13 +35,36 @@ This repository currently ships:
 
 Codex supports repo marketplaces and local plugin installation.
 
-If you cloned this repository locally:
+If you cloned this repository locally, add it as a local marketplace:
 
 ```bash
 codex marketplace add /path/to/frappe-agent
 ```
 
-Then enable `frappe-agent` from the added marketplace and restart Codex in a fresh session.
+Then enable `frappe-agent` from the added marketplace in Codex and restart Codex in a fresh session.
+
+Local repo flow:
+
+1. Clone this repository somewhere on disk.
+2. Run:
+
+```bash
+codex marketplace add /path/to/frappe-agent
+```
+
+3. Enable `frappe-agent` from that marketplace in Codex.
+4. Restart Codex.
+
+GitHub repo flow:
+
+1. Clone this repository or open the repo locally.
+2. Run:
+
+```bash
+codex marketplace add /path/to/local/clone/of/frappe-agent
+```
+
+3. Enable `frappe-agent` and restart Codex.
 
 This repo includes:
 
@@ -65,7 +88,14 @@ Install from GitHub with:
 
 ```text
 /plugin marketplace add Dkm0315/frappe-agent
-/plugin install frappe-agent@frappe-agent
+/plugin install frappe-agent@frappe-agent --scope local
+```
+
+Install from a local clone with:
+
+```text
+/plugin marketplace add /path/to/frappe-agent
+/plugin install frappe-agent@frappe-agent --scope local
 ```
 
 For local development:
@@ -73,6 +103,18 @@ For local development:
 ```bash
 claude --plugin-dir /path/to/frappe-agent
 ```
+
+Local repo flow:
+
+1. Clone this repository locally.
+2. In Claude Code, run:
+
+```text
+/plugin marketplace add /path/to/frappe-agent
+/plugin install frappe-agent@frappe-agent --scope local
+```
+
+3. Run `/reload-plugins` if Claude is already open.
 
 After updates during a session, reload plugins with:
 
@@ -90,7 +132,7 @@ This repository now includes:
 - `.cursor/rules/frappe-agent.mdc`
 - `.cursor/commands/*.md`
 
-To reuse them in a target repository:
+To install them into a local project repository:
 
 ```bash
 cp /path/to/frappe-agent/AGENTS.md /path/to/your-frappe-project/AGENTS.md
@@ -100,20 +142,38 @@ mkdir -p /path/to/your-frappe-project/.cursor/commands
 cp /path/to/frappe-agent/.cursor/commands/*.md /path/to/your-frappe-project/.cursor/commands/
 ```
 
-Cursor does not currently have the same repo-marketplace plugin install flow here that Claude Code does, so the practical installation path is still repo-level rules and commands.
+Or use symlinks during development:
+
+```bash
+ln -s /path/to/frappe-agent/AGENTS.md /path/to/your-frappe-project/AGENTS.md
+mkdir -p /path/to/your-frappe-project/.cursor
+ln -s /path/to/frappe-agent/.cursor/rules /path/to/your-frappe-project/.cursor/rules
+ln -s /path/to/frappe-agent/.cursor/commands /path/to/your-frappe-project/.cursor/commands
+```
+
+Cursor does not currently use the same repo-marketplace plugin install flow here that Claude Code does, so the practical local installation path is still repo-level rules and commands.
 
 ### GitHub Copilot
 
 Copilot uses repository custom instructions and agent instructions.
 
-You can copy the included instruction file into a target repository:
+To install the local guidance into a repository:
 
 ```bash
 mkdir -p /path/to/your-frappe-project/.github
 cp /path/to/frappe-agent/.github/copilot-instructions.md /path/to/your-frappe-project/.github/copilot-instructions.md
+cp /path/to/frappe-agent/AGENTS.md /path/to/your-frappe-project/AGENTS.md
 ```
 
-You can also keep `AGENTS.md` in the target repository root for tools that support agent instruction files.
+Or use symlinks during development:
+
+```bash
+mkdir -p /path/to/your-frappe-project/.github
+ln -s /path/to/frappe-agent/.github/copilot-instructions.md /path/to/your-frappe-project/.github/copilot-instructions.md
+ln -s /path/to/frappe-agent/AGENTS.md /path/to/your-frappe-project/AGENTS.md
+```
+
+Copilot does not use the same plugin marketplace flow here, so the practical local installation path is repository instructions.
 
 ## Usage Examples
 
