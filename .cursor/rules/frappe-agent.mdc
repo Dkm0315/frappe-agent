@@ -1,0 +1,11 @@
+---
+description: Frappe and ERPNext repository guidance
+alwaysApply: false
+---
+
+- Inspect bench, site, and app context before suggesting mutations.
+- Prefer the narrowest valid Frappe customization layer before framework code changes.
+- Prefer Frappe-native ORM and Query Builder patterns before raw SQL.
+- When reviewing raw SQL, check `tab{DocType}` naming, permissions, and transaction boundaries.
+- Distinguish desk-native, `www`, Vue/`frappe-ui`, React, and external SPA frontend paths.
+- Treat custom-remoted or forked apps as custom-derived apps and avoid invasive upstream patching when a custom app can own the change.
