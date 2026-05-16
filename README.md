@@ -177,6 +177,25 @@ ln -s /path/to/frappe-agent/AGENTS.md /path/to/your-frappe-project/AGENTS.md
 
 Copilot does not use the same plugin marketplace flow here, so the practical local installation path is repository instructions.
 
+## Releases
+
+GitHub Releases are built by `.github/workflows/release.yml`.
+
+Create a release from a tag:
+
+```bash
+git tag v0.1.0
+git push upstream v0.1.0
+```
+
+Or run the `Release` workflow manually from GitHub Actions and provide a version such as `0.1.0`.
+
+Each release uploads:
+
+- `frappe-agent-{version}.zip`
+- `frappe-agent-{version}.tar.gz`
+- `frappe-agent-{version}.sha256`
+
 ## Usage Examples
 
 Ask Codex to use the plugin naturally in the prompt:
@@ -227,7 +246,9 @@ frappe-agent/
 ├── .codex-plugin/
 │   └── plugin.json
 ├── .github/
-│   └── copilot-instructions.md
+│   ├── copilot-instructions.md
+│   └── workflows/
+│       └── release.yml
 ├── AGENTS.md
 ├── CLAUDE.md
 ├── commands/
