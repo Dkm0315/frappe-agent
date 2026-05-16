@@ -10,6 +10,7 @@ Use this repository when the task touches Frappe Framework, ERPNext, Bench, or F
 - Prefer Frappe-native APIs and ORM patterns before raw SQL.
 - Treat raw SQL and `get_all` as deliberate choices that need explanation.
 - Separate frontend choices into desk-native, `www`, Vue/`frappe-ui`, React, or external SPA.
+- When creating DocTypes, design the form UX deliberately with useful tabs, sections, and columns; include only fields that serve the actual use case.
 
 ## Bench Guidance
 

@@ -8,6 +8,7 @@
 - Bench-aware inspection before app installs, migrations, or environment changes
 - Frappe-native SQL and ORM guidance
 - Customization-layer routing for `Custom Field`, `Property Setter`, `Client Script`, `Server Script`, `Workspace`, `Web Page`, `Report`, `Dashboard`, and related surfaces
+- DocType form UX guidance for useful fields, tabs, sections, columns, and required-field discipline
 - ERPNext-aware guidance for deciding between configuration, metadata, workflow, and code changes
 - Frontend guidance for Vue, React, `frappe-ui`, desk pages, `www`, and external SPA patterns
 
@@ -19,6 +20,7 @@
 - `frappe-bench`
 - `frappe-sql`
 - `frappe-customization`
+- `frappe-doctype-design`
 - `frappe-search`
 - `frappe-erpnext`
 
@@ -188,6 +190,10 @@ Use Frappe Agent to choose the right Frappe customization layer for adding field
 ```
 
 ```text
+Use Frappe Agent to design a clean DocType layout for a service request workflow.
+```
+
+```text
 Use Frappe Agent to review whether this Frappe SQL should use frappe.db, frappe.qb, or raw SQL.
 ```
 
@@ -207,6 +213,7 @@ frappe-agent/
 │   │   ├── frappe-backend.md
 │   │   ├── frappe-bench.md
 │   │   ├── frappe-customization.md
+│   │   ├── frappe-doctype-design.md
 │   │   ├── frappe-erpnext.md
 │   │   ├── frappe-frontend.md
 │   │   ├── frappe-fullstack.md
@@ -227,6 +234,7 @@ frappe-agent/
 │   ├── frappe-backend.md
 │   ├── frappe-bench.md
 │   ├── frappe-customization.md
+│   ├── frappe-doctype-design.md
 │   ├── frappe-erpnext.md
 │   ├── frappe-frontend.md
 │   ├── frappe-fullstack.md
@@ -236,6 +244,7 @@ frappe-agent/
 │   ├── frappe-backend/
 │   ├── frappe-bench/
 │   ├── frappe-customization/
+│   ├── frappe-doctype-design/
 │   ├── frappe-erpnext/
 │   ├── frappe-frontend/
 │   ├── frappe-fullstack/
