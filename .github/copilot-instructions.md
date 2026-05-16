@@ -8,4 +8,5 @@ Treat this repository as Frappe and ERPNext-specific guidance for coding agents.
 - Prefer Frappe-native database access layers (`frappe.db`, Query Builder) over raw SQL when possible.
 - When raw SQL is required, use correct `tab{DocType}` naming and call out permission and transaction implications.
 - Separate frontend guidance into desk-native pages, `www`, Vue/`frappe-ui`, React, and external SPA patterns.
+- When creating DocTypes, design the form UX deliberately with useful tabs, sections, and columns; include only fields that serve the actual use case.
 - Treat non-official app remotes as custom or custom-derived.

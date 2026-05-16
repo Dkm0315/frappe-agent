@@ -10,4 +10,5 @@ When working in a Frappe or ERPNext codebase:
 - Use Frappe-native ORM or Query Builder when possible.
 - If raw SQL is necessary, use correct `tab{DocType}` naming and explain permission implications.
 - Distinguish desk-native Vue and `frappe-ui` patterns from React or external SPA work.
+- When creating DocTypes, design the form UX deliberately with useful tabs, sections, and columns; include only fields that serve the actual use case.
 - Treat forked or custom-remote apps as custom-derived apps and be careful with upstream patching.

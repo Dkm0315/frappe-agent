@@ -8,4 +8,5 @@ alwaysApply: false
 - Prefer Frappe-native ORM and Query Builder patterns before raw SQL.
 - When reviewing raw SQL, check `tab{DocType}` naming, permissions, and transaction boundaries.
 - Distinguish desk-native, `www`, Vue/`frappe-ui`, React, and external SPA frontend paths.
+- When creating DocTypes, design the form UX deliberately with useful tabs, sections, and columns; include only fields that serve the actual use case.
 - Treat custom-remoted or forked apps as custom-derived apps and avoid invasive upstream patching when a custom app can own the change.
