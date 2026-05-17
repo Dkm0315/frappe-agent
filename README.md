@@ -7,6 +7,10 @@
 
 `frappe-agent` is a Codex plugin for Frappe Framework and ERPNext development. It makes Codex more aware of Frappe-specific patterns so it can inspect benches more safely, choose the right customization layer, and avoid generic framework mistakes.
 
+## About
+
+A Frappe and ERPNext agent plugin for Codex and Claude Code, with skills for backend, frontend, bench operations, SQL, customization, DocType design, and ERPNext workflows. Live plugin profile: [hol.org/registry/plugins/dhairya-marwaha%2Ffrappe-agent](https://hol.org/registry/plugins/dhairya-marwaha%2Ffrappe-agent)
+
 ## What It Covers
 
 - Frappe full-stack reasoning across backend, frontend, customization, and bench work
