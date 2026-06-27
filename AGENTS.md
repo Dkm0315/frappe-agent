@@ -1,6 +1,6 @@
 # Frappe Agent Instructions
 
-Use this repository when the task touches Frappe Framework, ERPNext, Bench, or Frappe-adjacent frontend work.
+Use this repository when the task touches Frappe Framework, ERPNext, Bench, or Frappe ecosystem apps such as Helpdesk, CRM, LMS, Gameplan, Drive, HRMS, Insights, Builder, or Payments.
 
 ## Core Behavior
 
@@ -11,6 +11,7 @@ Use this repository when the task touches Frappe Framework, ERPNext, Bench, or F
 - Treat raw SQL and `get_all` as deliberate choices that need explanation.
 - Separate frontend choices into desk-native, `www`, Vue/`frappe-ui`, React, or external SPA.
 - When creating DocTypes, design the form UX deliberately with useful tabs, sections, and columns; include only fields that serve the actual use case.
+- Route app-specific work through the matching ecosystem model: ERPNext, Helpdesk, CRM, LMS, Gameplan, Drive, HRMS, Insights, Builder, or Payments.
 
 ## Bench Guidance
 
@@ -27,3 +28,15 @@ Use this repository when the task touches Frappe Framework, ERPNext, Bench, or F
 
 - First determine whether a request belongs in configuration, workflow, metadata, reporting, dashboards, workspace setup, or code.
 - Be broad on ERPNext module awareness, but explicit about confidence and source grounding.
+
+## Ecosystem App Guidance
+
+- For Helpdesk, prioritize ticket lifecycle, SLA, assignment, portal, and support reporting.
+- For CRM, separate leads, deals, contacts, organizations, activities, and ERPNext Selling handoff.
+- For LMS, protect enrollment, learner progress, assessments, grading, and certificates.
+- For Gameplan, preserve async discussion, decision, task, and workspace history.
+- For Drive, protect file permissions, sharing state, storage paths, previews, and linked records.
+- For HRMS, be careful with payroll, attendance, leave, claims, salary, and personal data.
+- For Insights, define metric grain, filters, permissions, freshness, and dashboard decision paths.
+- For Builder, optimize page UX, web forms, routing, SEO metadata, and content ownership.
+- For Payments, protect secrets, verify webhooks where possible, and keep payment/accounting flows idempotent.

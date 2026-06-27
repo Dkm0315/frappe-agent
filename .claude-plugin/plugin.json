@@ -1,7 +1,7 @@
 {
   "name": "frappe-agent",
   "version": "0.1.0",
-  "description": "Frappe and ERPNext coding, customization, bench, and review intelligence for Claude Code.",
+  "description": "Frappe, ERPNext, and Frappe ecosystem coding, customization, bench, and review intelligence for Claude Code and AI coding workflows.",
   "author": {
     "name": "Dhairya Marwaha",
     "email": "dhairya15marwaha@gmail.com",

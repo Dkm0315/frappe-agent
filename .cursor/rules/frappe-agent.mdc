@@ -1,5 +1,5 @@
 ---
-description: Frappe and ERPNext repository guidance
+description: Frappe, ERPNext, and Frappe ecosystem repository guidance
 alwaysApply: false
 ---
 
@@ -10,3 +10,4 @@ alwaysApply: false
 - Distinguish desk-native, `www`, Vue/`frappe-ui`, React, and external SPA frontend paths.
 - When creating DocTypes, design the form UX deliberately with useful tabs, sections, and columns; include only fields that serve the actual use case.
 - Treat custom-remoted or forked apps as custom-derived apps and avoid invasive upstream patching when a custom app can own the change.
+- Route app-specific work through the right ecosystem model: ERPNext, Helpdesk, CRM, LMS, Gameplan, Drive, HRMS, Insights, Builder, or Payments.
