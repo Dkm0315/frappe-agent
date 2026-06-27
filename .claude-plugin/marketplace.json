@@ -5,14 +5,14 @@
     "email": "dhairya15marwaha@gmail.com"
   },
   "metadata": {
-    "description": "Frappe and ERPNext development tools for Claude Code.",
+    "description": "Frappe, ERPNext, and Frappe ecosystem development tools for Claude Code.",
     "version": "0.1.0"
   },
   "plugins": [
     {
       "name": "frappe-agent",
       "source": "./",
-      "description": "Frappe and ERPNext coding, customization, bench, and review intelligence.",
+      "description": "Frappe, ERPNext, Helpdesk, CRM, LMS, Gameplan, Drive, HRMS, Insights, Builder, and Payments coding guidance.",
       "version": "0.1.0"
     }
   ]
