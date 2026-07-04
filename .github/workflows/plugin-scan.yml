@@ -23,7 +23,7 @@ jobs:
 
       - name: Scan plugin
         id: scan
-        uses: hashgraph-online/ai-plugin-scanner-action@fd0069e694bbb4852e4ba539fd61dd1420623a56
+        uses: hashgraph-online/ai-plugin-scanner-action@e2847918233a9e58fe51e0a95825ca3ba2f8091a
         with:
           plugin_dir: "."
           format: "sarif"
